@@ -79,6 +79,20 @@ describe ('Standard user test', ()=> {
             await expect(InventoryPage.textPrice6).toBeDisplayed();
             await expect(InventoryPage.textPrice6).toHaveTextContaining('$');
         })
+        it('Check correct images display on inventory', async () => {
+            const image1 = await $('#item_4_img_link > img').getAttribute('src');
+            await expect(image1).toBe('/static/media/sauce-backpack-1200x1500.34e7aa42.jpg');
+            const image2 = await $('#item_0_img_link > img:nth-child(1)').getAttribute('src');
+            await expect(image2).toBe('/static/media/bike-light-1200x1500.a0c9caae.jpg');
+            const image3 = await $('#item_1_img_link > img:nth-child(1)').getAttribute('src');
+            await expect(image3).toBe('/static/media/bolt-shirt-1200x1500.c0dae290.jpg');
+            const image4 = await $('#item_5_img_link > img:nth-child(1)').getAttribute('src');
+            await expect(image4).toBe('/static/media/sauce-pullover-1200x1500.439fc934.jpg');
+            const image5 = await $('#item_2_img_link > img:nth-child(1)').getAttribute('src');
+            await expect(image5).toBe('/static/media/red-onesie-1200x1500.1b15e1fa.jpg');
+            const image6 = await $('#item_3_img_link > img:nth-child(1)').getAttribute('src');
+            await expect(image6).toBe('/static/media/red-tatt-1200x1500.e32b4ef9.jpg');
+        });
     })
     describe ('Header test', ()=> {
         it('Buttons clickables', async () => {
