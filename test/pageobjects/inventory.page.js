@@ -11,6 +11,8 @@ class InventoryPage {
     get title4() { return $('#item_5_title_link')};
     get title5() { return $('#item_2_title_link')};
     get title6() { return $('#item_3_title_link')};
+    get titleDetails() { return $('.inventory_details_name')};
+    get descriptionDetail() { return $('.inventory_details_desc')};
     get add1() { return $('#add-to-cart-sauce-labs-backpack')};
     get add2() { return $('#add-to-cart-sauce-labs-bike-light')};
     get add3() { return $('#add-to-cart-sauce-labs-bolt-t-shirt')};
@@ -33,6 +35,8 @@ class InventoryPage {
 
     async addTocart ()  {
         await this.img1.click();
+        await expect(this.titleDetails).toHaveText('Sauce Labs Backpack');
+        await expect(this.descriptionDetail).toHaveText('carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.');
         await this.add1.click();
         await this.remove1.click();
         await this.backBtn.click();

@@ -174,7 +174,7 @@ describe ('Standard user test', ()=> {
         })
     })
     describe ('Checkout step one, login success test', ()=> {
-        it('Empty first name', async () => {
+        it('Data success', async () => {
             await browser.url('https://www.saucedemo.com/checkout-step-one.html');
             await CheckoutPage.checkout('Higinia', 'Medica', '2000');
         })
